@@ -1,218 +1,192 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+
+<html dir="rtl" lang="ar">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="author" content="Fahed" />
-  <meta name="keywords" content="فندق كلاب, Loving Homes, هونغ كونغ, رعاية الكلاب, إقامة كلاب, Dog Hotel" />
-  <title>الرئيسية | Loving Homes</title>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-  <link rel="stylesheet" href="css/index.css" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Fahed" name="author"/>
+<meta content="فندق كلاب, Loving Homes, هونغ كونغ, رعاية الكلاب, إقامة كلاب, Dog Hotel" name="keywords"/>
+<title>الرئيسية | Loving Homes</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="css/index.css" rel="stylesheet"/>
 </head>
-
 <body>
-
-  <div class="topnav" id="myTopnav">
-    <a href="index.html" class="active">الرئيسية</a>
-    <a href="services.html">خدماتنا</a>
-    <a href="packages.html">الباقات</a>
-    <a href="tips.html">نصائح ومساعدة</a>
-
-    <div class="dropdown" id="companyDrop">
-      <button class="dropbtn" type="button" onclick="toggleCompanyDropdown(event)">
+<div class="topnav" id="myTopnav">
+<a class="active" href="index.html">الرئيسية</a>
+<a href="services.html">خدماتنا</a>
+<a href="packages.html">الباقات</a>
+<a href="tips.html">نصائح ومساعدة</a>
+<div class="dropdown" id="companyDrop">
+<button class="dropbtn" onclick="toggleCompanyDropdown(event)" type="button">
         الشركة <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-        <a href="about.html">حكايتنا</a>
-        <a href="contact.html">تواصل معنا</a>
-      </div>
-    </div>
-
-    <a href="reservation.html">احجز إقامة</a>
-    <a href="javascript:void(0);" class="icon" onclick="toggleNav()">&#9776;</a>
-  </div>
-
-  <marquee class="m1m">
+</button>
+<div class="dropdown-content">
+<a href="about.html">حكايتنا</a>
+<a href="contact.html">تواصل معنا</a>
+</div>
+</div>
+<a href="reservation.html">احجز إقامة</a>
+<div class="lang-switcher"><button onclick="setLanguage('ar')" type="button">AR</button><button onclick="setLanguage('en')" type="button">EN</button></div><a class="icon" href="javascript:void(0);" onclick="toggleNav()">☰</a>
+</div>
+<marquee class="m1m">
     ☆*:. في Loving Homes نوفر إقامة آمنة ومريحة لكلبك مع مراقبة واهتمام يومي وتحديثات للمالك…｡.:*☆
   </marquee>
-
-  <div class="logo">
-    <a href="index.html">
-      <img src="img/logo.png" alt="شعار Loving Homes">
-    </a>
-    <h1>Loving Homes</h1>
-    <p class="subtitle">فندق الكلاب في هونغ كونغ — رعاية وراحة مثل البيت</p>
-  </div>
-
-  <section class="social-header">
-    <h2>Loving Homes</h2>
-
-    <div class="social-icons">
-      <a href="https://web.whatsapp.com/" class="social-circle whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
-        <i class="fa fa-whatsapp"></i>
-      </a>
-
-      <a href="https://discord.com/" class="social-circle discord" target="_blank" rel="noopener" aria-label="Discord">
-        <img src="img/discord(1).png" alt="Discord">
-      </a>
-
-      <a href="https://www.instagram.com/" class="social-circle instagram" target="_blank" rel="noopener" aria-label="Instagram">
-        <i class="fa fa-instagram"></i>
-      </a>
-
-      <a href="https://x.com/?lang=ar" class="social-circle x-icon" target="_blank" rel="noopener" aria-label="X">
+<div class="logo">
+<a href="index.html">
+<img alt="شعار Loving Homes" src="img/logo.png"/>
+</a>
+<h1>Loving Homes</h1>
+<p class="subtitle">فندق الكلاب في هونغ كونغ — رعاية وراحة مثل البيت</p>
+</div>
+<section class="social-header">
+<h2>Loving Homes</h2>
+<div class="social-icons">
+<a aria-label="WhatsApp" class="social-circle whatsapp" href="https://web.whatsapp.com/" rel="noopener" target="_blank">
+<i class="fa fa-whatsapp"></i>
+</a>
+<a aria-label="Discord" class="social-circle discord" href="https://discord.com/" rel="noopener" target="_blank">
+<img alt="Discord" src="img/discord(1).png"/>
+</a>
+<a aria-label="Instagram" class="social-circle instagram" href="https://www.instagram.com/" rel="noopener" target="_blank">
+<i class="fa fa-instagram"></i>
+</a>
+<a aria-label="X" class="social-circle x-icon" href="https://x.com/?lang=ar" rel="noopener" target="_blank">
         X
       </a>
-    </div>
-  </section>
-
-  <section class="hero">
-    <div class="hero-text">
-      <h2>خلي كلبك يستمتع… وإنت مطمّن</h2>
-      <p>
+</div>
+</section>
+<section class="hero">
+<div class="hero-text">
+<h2>خلي كلبك يستمتع… وإنت مطمّن</h2>
+<p>
         Loving Homes يقدم إقامة فاخرة للكلاب مع غرف مريحة ومناطق لعب آمنة وتمشية يومية وأنشطة ترفيهية
         بالإضافة إلى رعاية بيطرية 24 ساعة هدفنا أن يشعر صاحب الكلب بالطمأنينة وأن يحظى الكلب بعناية
         تشبه البيت
       </p>
-
-      <div class="cta">
-        <a class="btn primary" href="reservation.html">احجز إقامة الآن</a>
-        <a class="btn secondary" href="packages.html">شوف الباقات</a>
-      </div>
-
-      <ul class="quick-points">
-        <li>رعاية بيطرية 24 ساعة</li>
-        <li>نقل من وإلى الفندق حسب المنطقة</li>
-        <li>مناطق لعب داخلية وخارجية آمنة</li>
-        <li>تحديثات وصور للمالك حسب الباقة</li>
-      </ul>
-    </div>
-
-    <div class="hero-media">
-      <img src="img/Indoor play.jpg" alt="كلاب سعيدة في فندق Loving Homes">
-    </div>
-  </section>
-
-  <section class="section">
-    <h2>ليش Loving Homes</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>أمان أولاً</h3>
-        <p>مناطق آمنة للكلاب ومتابعة مستمرة وقوانين واضحة للتعامل مع كل كلب حسب طبيعته</p>
-      </div>
-      <div class="card">
-        <h3>راحة مثل البيت</h3>
-        <p>غرف فيها تدفئة وتبريد ومساحة مريحة وأجواء هادئة تناسب الكلاب الحساسة</p>
-      </div>
-      <div class="card">
-        <h3>تواصل مع المالك</h3>
-        <p>نرسل تحديثات وصور يومية حسب الباقة حتى يبقى المالك مطمئنًا على كلبه</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2>لمحة عن خدماتنا</h2>
-    <div class="grid">
-      <div class="feature">
-        <h3>حلاقة ومنتجع</h3>
-        <p>تنظيف واستحمام وقص أظافر والعناية بالشعر ضمن معايير نظافة عالية</p>
-      </div>
-      <div class="feature">
-        <h3>تمشية وأنشطة</h3>
-        <p>تمشية يومية وأنشطة ترفيهية ولعب داخلية ومسارات رشاقة للكلاب النشيطة</p>
-      </div>
-      <div class="feature">
-        <h3>مساحات خارجية</h3>
-        <p>مراعي خارجية آمنة ومنطقة عشب خاصة حسب الباقة ليستمتع كلبك بحرية</p>
-      </div>
-      <div class="feature">
-        <h3>رعاية بيطرية 24 ساعة</h3>
-        <p>متابعة طبية مستمرة لأي حالة طارئة مع جاهزية للتصرف بسرعة</p>
-      </div>
-    </div>
-
-    <div class="center">
-      <a class="btn secondary" href="services.html">اذهب إلى صفحة الخدمات</a>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2>الباقات الأكثر طلبًا</h2>
-    <div class="cards">
-      <div class="card pkg">
-        <h3>الباقة المميزة</h3>
-        <p>4 تمشيات و4 أنشطة مع عشب خاص وتحديثات وصور يومية ومكافآت حسب الاتفاق</p>
-        <a class="link" href="packages.html">تفاصيل الباقة</a>
-      </div>
-      <div class="card pkg">
-        <h3>الباقة الكلاسيكية</h3>
-        <p>3 تمشيات و3 أنشطة مع لعب داخلية ومنطقة استرخاء وجلسة حلاقة وتنظيف</p>
-        <a class="link" href="packages.html">تفاصيل الباقة</a>
-      </div>
-      <div class="card pkg">
-        <h3>الباقة اليومية</h3>
-        <p>تمشيتان مع لعب خارجية ومسار رشاقة وأنشطة مناسبة للإقامة اليومية</p>
-        <a class="link" href="packages.html">تفاصيل الباقة</a>
-      </div>
-    </div>
-
-    <div class="note">
-      <strong>ملاحظة</strong>
+<div class="cta">
+<a class="btn primary" href="reservation.html">احجز إقامة الآن</a>
+<a class="btn secondary" href="packages.html">شوف الباقات</a>
+</div>
+<ul class="quick-points">
+<li>رعاية بيطرية 24 ساعة</li>
+<li>نقل من وإلى الفندق حسب المنطقة</li>
+<li>مناطق لعب داخلية وخارجية آمنة</li>
+<li>تحديثات وصور للمالك حسب الباقة</li>
+</ul>
+</div>
+<div class="hero-media">
+<img alt="كلاب سعيدة في فندق Loving Homes" src="img/Indoor play.jpg"/>
+</div>
+</section>
+<section class="section">
+<h2>ليش Loving Homes</h2>
+<div class="cards">
+<div class="card">
+<h3>أمان أولاً</h3>
+<p>مناطق آمنة للكلاب ومتابعة مستمرة وقوانين واضحة للتعامل مع كل كلب حسب طبيعته</p>
+</div>
+<div class="card">
+<h3>راحة مثل البيت</h3>
+<p>غرف فيها تدفئة وتبريد ومساحة مريحة وأجواء هادئة تناسب الكلاب الحساسة</p>
+</div>
+<div class="card">
+<h3>تواصل مع المالك</h3>
+<p>نرسل تحديثات وصور يومية حسب الباقة حتى يبقى المالك مطمئنًا على كلبه</p>
+</div>
+</div>
+</section>
+<section class="section">
+<h2>لمحة عن خدماتنا</h2>
+<div class="grid">
+<div class="feature">
+<h3>حلاقة ومنتجع</h3>
+<p>تنظيف واستحمام وقص أظافر والعناية بالشعر ضمن معايير نظافة عالية</p>
+</div>
+<div class="feature">
+<h3>تمشية وأنشطة</h3>
+<p>تمشية يومية وأنشطة ترفيهية ولعب داخلية ومسارات رشاقة للكلاب النشيطة</p>
+</div>
+<div class="feature">
+<h3>مساحات خارجية</h3>
+<p>مراعي خارجية آمنة ومنطقة عشب خاصة حسب الباقة ليستمتع كلبك بحرية</p>
+</div>
+<div class="feature">
+<h3>رعاية بيطرية 24 ساعة</h3>
+<p>متابعة طبية مستمرة لأي حالة طارئة مع جاهزية للتصرف بسرعة</p>
+</div>
+</div>
+<div class="center">
+<a class="btn secondary" href="services.html">اذهب إلى صفحة الخدمات</a>
+</div>
+</section>
+<section class="section">
+<h2>الباقات الأكثر طلبًا</h2>
+<div class="cards">
+<div class="card pkg">
+<h3>الباقة المميزة</h3>
+<p>4 تمشيات و4 أنشطة مع عشب خاص وتحديثات وصور يومية ومكافآت حسب الاتفاق</p>
+<a class="link" href="packages.html">تفاصيل الباقة</a>
+</div>
+<div class="card pkg">
+<h3>الباقة الكلاسيكية</h3>
+<p>3 تمشيات و3 أنشطة مع لعب داخلية ومنطقة استرخاء وجلسة حلاقة وتنظيف</p>
+<a class="link" href="packages.html">تفاصيل الباقة</a>
+</div>
+<div class="card pkg">
+<h3>الباقة اليومية</h3>
+<p>تمشيتان مع لعب خارجية ومسار رشاقة وأنشطة مناسبة للإقامة اليومية</p>
+<a class="link" href="packages.html">تفاصيل الباقة</a>
+</div>
+</div>
+<div class="note">
+<strong>ملاحظة</strong>
       توجد حزم مخصصة للإقامات الطويلة أو الاحتياجات الخاصة ويمكن التواصل معنا لترتيب التفاصيل
     </div>
-  </section>
-
-  <section class="section">
-    <h2>نصائح سريعة قبل الحجز</h2>
-    <ul class="tips">
-      <li>تأكد من أن تطعيمات كلبك محدثة قبل الإقامة</li>
-      <li>اكتب ملاحظات عن الأكل أو الحساسية أو الأدوية إن وجدت</li>
-      <li>اختر الباقة حسب نشاط كلبك</li>
-      <li>إذا كان كلبك لا يرتاح مع كلاب أخرى أخبرنا لنرتب له مساحة مناسبة</li>
-    </ul>
-
-    <div class="center">
-      <a class="btn secondary" href="tips.html">المزيد من النصائح والمساعدة</a>
-    </div>
-  </section>
-
-  <section class="contact-cta">
-    <h2>بدك تفاصيل أكثر</h2>
-    <p>تواصل معنا وخلينا نساعدك تختار أفضل باقة لكلبك</p>
-    <div class="cta">
-      <a class="btn primary" href="contact.html">تواصل معنا</a>
-      <a class="btn secondary" href="reservation.html">احجز الآن</a>
-    </div>
-  </section>
-
-  <div class="footer">
+</section>
+<section class="section">
+<h2>نصائح سريعة قبل الحجز</h2>
+<ul class="tips">
+<li>تأكد من أن تطعيمات كلبك محدثة قبل الإقامة</li>
+<li>اكتب ملاحظات عن الأكل أو الحساسية أو الأدوية إن وجدت</li>
+<li>اختر الباقة حسب نشاط كلبك</li>
+<li>إذا كان كلبك لا يرتاح مع كلاب أخرى أخبرنا لنرتب له مساحة مناسبة</li>
+</ul>
+<div class="center">
+<a class="btn secondary" href="tips.html">المزيد من النصائح والمساعدة</a>
+</div>
+</section>
+<section class="contact-cta">
+<h2>بدك تفاصيل أكثر</h2>
+<p>تواصل معنا وخلينا نساعدك تختار أفضل باقة لكلبك</p>
+<div class="cta">
+<a class="btn primary" href="contact.html">تواصل معنا</a>
+<a class="btn secondary" href="reservation.html">احجز الآن</a>
+</div>
+</section>
+<div class="footer">
     Loving Homes - فندق الكلاب | هونغ كونغ
   </div>
-
-  <!-- Netlify hidden forms -->
-  <form name="contact" data-netlify="true" hidden>
-    <input type="text" name="name">
-    <input type="text" name="phone">
-    <input type="text" name="email">
-    <input type="text" name="topic">
-    <input type="datetime-local" name="date">
-    <textarea name="message"></textarea>
-  </form>
-
-  <form name="booking" data-netlify="true" hidden>
-    <input type="text" name="name">
-    <input type="text" name="phone">
-    <input type="text" name="email">
-    <input type="text" name="package">
-    <input type="text" name="stayDays">
-    <input type="text" name="dogSize">
-    <input type="text" name="roomType">
-    <input type="date" name="checkin">
-    <textarea name="notes"></textarea>
-  </form>
-
+<!-- Netlify hidden forms -->
+<form data-netlify="true" hidden="" name="contact">
+<input name="name" type="text"/>
+<input name="phone" type="text"/>
+<input name="email" type="text"/>
+<input name="topic" type="text"/>
+<input name="date" type="datetime-local"/>
+<textarea name="message"></textarea>
+</form>
+<form data-netlify="true" hidden="" name="booking">
+<input name="name" type="text"/>
+<input name="phone" type="text"/>
+<input name="email" type="text"/>
+<input name="package" type="text"/>
+<input name="stayDays" type="text"/>
+<input name="dogSize" type="text"/>
+<input name="roomType" type="text"/>
+<input name="checkin" type="date"/>
+<textarea name="notes"></textarea>
+</form>
+<script src="js/language.js"></script><script src="js/theme.js"></script>
   <script src="js/index.js"></script>
 </body>
 </html>

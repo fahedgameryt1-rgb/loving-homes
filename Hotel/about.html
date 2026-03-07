@@ -1,91 +1,78 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+
+<html dir="rtl" lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="Fahed">
-  <meta name="keywords" content="Loving Homes, عنا, حكايتنا, فندق كلاب, هونغ كونغ">
-  <title>حكايتنا | Loving Homes</title>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/about.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Fahed" name="author"/>
+<meta content="Loving Homes, عنا, حكايتنا, فندق كلاب, هونغ كونغ" name="keywords"/>
+<title>حكايتنا | Loving Homes</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="css/about.css" rel="stylesheet"/>
 </head>
-
 <body>
-
-  <!-- NAV -->
-  <div class="topnav" id="myTopnav">
-    <a href="index.html">الرئيسية</a>
-    <a href="services.html">خدماتنا</a>
-    <a href="packages.html">الباقات</a>
-    <a href="tips.html">نصائح ومساعدة</a>
-
-    <div class="dropdown" id="companyDrop">
-      <button class="dropbtn" type="button" onclick="toggleCompanyDropdown(event)">
+<!-- NAV -->
+<div class="topnav" id="myTopnav">
+<a href="index.html">الرئيسية</a>
+<a href="services.html">خدماتنا</a>
+<a href="packages.html">الباقات</a>
+<a href="tips.html">نصائح ومساعدة</a>
+<div class="dropdown" id="companyDrop">
+<button class="dropbtn" onclick="toggleCompanyDropdown(event)" type="button">
         الشركة <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-        <a href="about.html" class="active-dd">حكايتنا</a>
-        <a href="contact.html">تواصل معنا</a>
-      </div>
-    </div>
-
-    <a href="reservation.html">احجز إقامة</a>
-    <a href="javascript:void(0);" class="icon" onclick="toggleNav()">&#9776;</a>
-  </div>
-
-  <marquee class="m1m">☆*:. Loving Homes مكان آمن ودافئ لكلبك — راحة مثل البيت…｡.:*☆</marquee>
-
-  <div class="logo">
-    <img src="img/logo.png" alt="logo">
-    <h1>Loving Homes</h1>
-    <p class="subtitle">حكايتنا ورؤيتنا في رعاية الكلاب</p>
-  </div>
-
-  <div class="about-box">
-    <h2>من نحن؟</h2>
-    <p>
+</button>
+<div class="dropdown-content">
+<a class="active-dd" href="about.html">حكايتنا</a>
+<a href="contact.html">تواصل معنا</a>
+</div>
+</div>
+<a href="reservation.html">احجز إقامة</a>
+<div class="lang-switcher"><button onclick="setLanguage('ar')" type="button">AR</button><button onclick="setLanguage('en')" type="button">EN</button></div><a class="icon" href="javascript:void(0);" onclick="toggleNav()">☰</a>
+</div>
+<marquee class="m1m">☆*:. Loving Homes مكان آمن ودافئ لكلبك — راحة مثل البيت…｡.:*☆</marquee>
+<div class="logo">
+<img alt="logo" src="img/logo.png"/>
+<h1>Loving Homes</h1>
+<p class="subtitle">حكايتنا ورؤيتنا في رعاية الكلاب</p>
+</div>
+<div class="about-box">
+<h2>من نحن؟</h2>
+<p>
       Loving Homes هو فندق كلاب في هونغ كونغ تأسس بهدف توفير بيئة آمنة ومريحة للكلاب أثناء سفر أصحابها أو انشغالهم
       نحن نؤمن أن الكلب يستحق معاملة لطيفة ورعاية مستمرة مثل البيت لذلك وفرنا غرف مريحة ومناطق لعب آمنة
       وتمشية وأنشطة يومية بالإضافة إلى رعاية بيطرية على مدار 24 ساعة
     </p>
-  </div>
-
-  <div class="about-box">
-    <h2>رسالتنا</h2>
-    <p>
+</div>
+<div class="about-box">
+<h2>رسالتنا</h2>
+<p>
       تقديم إقامة ممتعة وآمنة للكلاب مع الحفاظ على راحتهم وصحتهم والتواصل مع أصحابهم بتحديثات واضحة
       حتى يكون المالك مطمئن طوال فترة الإقامة
     </p>
-  </div>
-
-  <div class="about-box">
-    <h2>كيف نعمل؟</h2>
-    <p>
+</div>
+<div class="about-box">
+<h2>كيف نعمل؟</h2>
+<p>
       عند وصول الكلب يتم تسجيل معلوماته الأساسية مثل الطعام والحساسية والأدوية والسلوك ثم يتم اختيار جدول مناسب
       للتمشية والأنشطة وفقًا لطبيعته مع متابعة يومية للنظافة والراحة والسلامة
     </p>
-  </div>
-
-  <h2 class="video-title">Loving Homes</h2>
-
-  <!-- بدّل أسماء الفيديوهات حسب اللي عندك -->
-  <video class="vid" src="video/video.mp4" controls autoplay muted loop></video>
-
-  <div class="about-box">
-    <h2>قيمنا</h2>
-    <ul class="values">
-      <li>الأمان والرحمة في التعامل</li>
-      <li>نظافة عالية وبيئة مريحة</li>
-      <li>تواصل واضح مع المالك</li>
-      <li>خدمات تناسب احتياجات كل كلب</li>
-    </ul>
-  </div>
-
-  <div class="footer">
+</div>
+<h2 class="video-title">Loving Homes</h2>
+<!-- بدّل أسماء الفيديوهات حسب اللي عندك -->
+<video autoplay="" class="vid" controls="" loop="" muted="" src="video/video.mp4"></video>
+<div class="about-box">
+<h2>قيمنا</h2>
+<ul class="values">
+<li>الأمان والرحمة في التعامل</li>
+<li>نظافة عالية وبيئة مريحة</li>
+<li>تواصل واضح مع المالك</li>
+<li>خدمات تناسب احتياجات كل كلب</li>
+</ul>
+</div>
+<div class="footer">
     Loving Homes - فندق الكلاب | هونغ كونغ
   </div>
-
+<script src="js/language.js"></script><script src="js/theme.js"></script>
   <script src="js/about.js"></script>
 </body>
 </html>

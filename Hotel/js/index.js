@@ -1,14 +1,20 @@
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
+function toggleNav() {
+  var nav = document.getElementById("myTopnav");
+  var drop = document.getElementById("companyDrop");
+
+  if (nav.className === "topnav") {
+    nav.className += " responsive";
   } else {
-    x.className = "topnav";
+    nav.className = "topnav";
+    if (drop) {
+      drop.classList.remove("open");
+    }
   }
 }
 
 function toggleCompanyDropdown(event) {
   event.preventDefault();
+
   var nav = document.getElementById("myTopnav");
   var dropdown = document.getElementById("companyDrop");
 
@@ -17,11 +23,16 @@ function toggleCompanyDropdown(event) {
   }
 }
 
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn') && !event.target.closest('.dropdown')) {
-    var dropdown = document.getElementById("companyDrop");
-    if (dropdown) {
-      dropdown.classList.remove("open");
-    }
+document.addEventListener("click", function (event) {
+  var nav = document.getElementById("myTopnav");
+  var dropdown = document.getElementById("companyDrop");
+
+  if (
+    nav.classList.contains("responsive") &&
+    dropdown &&
+    !dropdown.contains(event.target) &&
+    !event.target.classList.contains("icon")
+  ) {
+    dropdown.classList.remove("open");
   }
-}
+});

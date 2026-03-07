@@ -1,104 +1,82 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+
+<html dir="rtl" lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="Fahed">
-  <meta name="keywords" content="Loving Homes, تواصل معنا, فندق كلاب, هونغ كونغ">
-  <title>تواصل معنا | Loving Homes</title>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/contact.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Fahed" name="author"/>
+<meta content="Loving Homes, تواصل معنا, فندق كلاب, هونغ كونغ" name="keywords"/>
+<title>تواصل معنا | Loving Homes</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="css/contact.css" rel="stylesheet"/>
 </head>
-
 <body>
-
-  <div class="topnav" id="myTopnav">
-    <a href="index.html">الرئيسية</a>
-    <a href="services.html">خدماتنا</a>
-    <a href="packages.html">الباقات</a>
-    <a href="tips.html">نصائح ومساعدة</a>
-
-    <div class="dropdown" id="companyDrop">
-      <button class="dropbtn" type="button" onclick="toggleCompanyDropdown(event)">
+<div class="topnav" id="myTopnav">
+<a href="index.html">الرئيسية</a>
+<a href="services.html">خدماتنا</a>
+<a href="packages.html">الباقات</a>
+<a href="tips.html">نصائح ومساعدة</a>
+<div class="dropdown" id="companyDrop">
+<button class="dropbtn" onclick="toggleCompanyDropdown(event)" type="button">
         الشركة <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-        <a href="about.html">حكايتنا</a>
-        <a href="contact.html" class="active-dd">تواصل معنا</a>
-      </div>
-    </div>
-
-    <a href="reservation.html">احجز إقامة</a>
-    <a href="javascript:void(0);" class="icon" onclick="toggleNav()">&#9776;</a>
-  </div>
-
-  <marquee class="m1m">☆*:. تواصل معنا لأي استفسار عن الباقات أو الخدمات أو حجز إقامة…｡.:*☆</marquee>
-
-  <div class="logo">
-    <img src="img/logo.png" alt="شعار Loving Homes">
-    <h1>Loving Homes</h1>
-    <p class="subtitle">نحن هنا لمساعدتك</p>
-  </div>
-
-  <div class="form-wrapper">
-    <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
-      <input type="hidden" name="form-name" value="contact">
-
-      <p hidden>
-        <label>لا تعبئ هذا الحقل إذا كنت إنسانًا <input name="bot-field"></label>
-      </p>
-
-      <h2><mark>معلوماتك</mark></h2>
-
-      <label for="name">أدخل اسمك</label>
-      <input type="text" id="name" name="name" placeholder="مثال: Ahmad">
-
-      <label for="phone">رقم الهاتف</label>
-      <input type="text" id="phone" name="phone" placeholder="مثال: 12345678">
-
-      <label for="email">البريد الإلكتروني</label>
-      <input type="text" id="email" name="email" placeholder="example@gmail.com">
-
-      <hr>
-
-      <h2><mark>نوع الرسالة</mark></h2>
-
-      <label for="topic">اختر سبب التواصل</label>
-      <select id="topic" name="topic">
-        <option value="">اختر</option>
-        <option value="packages">استفسار عن الباقات</option>
-        <option value="services">استفسار عن الخدمات</option>
-        <option value="custom">طلب حزمة مخصصة</option>
-        <option value="reservation">مساعدة في الحجز</option>
-        <option value="other">أخرى</option>
-      </select>
-
-      <label for="date">تاريخ مناسب للتواصل (اختياري)</label>
-      <input type="datetime-local" id="date" name="date">
-
-      <label for="message">اكتب رسالتك</label>
-      <textarea id="message" name="message" maxlength="200" placeholder="اكتب التفاصيل هنا"></textarea>
-
-      <p id="formMessage" class="form-message"></p>
-
-      <button type="submit" class="send-btn">إرسال</button>
-    </form>
-
-    <div class="info-box">
-      <h3>معلومات الاتصال</h3>
-      <p>📍 هونغ كونغ</p>
-      <p>☎️ +852 0000 0000</p>
-      <p>✉️ lovinghomes@gmail.com</p>
-      <p class="note">ملاحظة: هذه بيانات نموذجية — غيّرها حسب معلوماتك الحقيقية</p>
-    </div>
-  </div>
-
-  <div class="footer">Loving Homes - فندق الكلاب | هونغ كونغ</div>
-
-  <audio id="successSound" src="sound-effects/success.mp3" preload="auto"></audio>
-  <audio id="errorSound" src="sound-effects/error.mp3" preload="auto"></audio>
-
+</button>
+<div class="dropdown-content">
+<a href="about.html">حكايتنا</a>
+<a class="active-dd" href="contact.html">تواصل معنا</a>
+</div>
+</div>
+<a href="reservation.html">احجز إقامة</a>
+<div class="lang-switcher"><button onclick="setLanguage('ar')" type="button">AR</button><button onclick="setLanguage('en')" type="button">EN</button></div><a class="icon" href="javascript:void(0);" onclick="toggleNav()">☰</a>
+</div>
+<marquee class="m1m">☆*:. تواصل معنا لأي استفسار عن الباقات أو الخدمات أو حجز إقامة…｡.:*☆</marquee>
+<div class="logo">
+<img alt="شعار Loving Homes" src="img/logo.png"/>
+<h1>Loving Homes</h1>
+<p class="subtitle">نحن هنا لمساعدتك</p>
+</div>
+<div class="form-wrapper">
+<form data-netlify="true" id="contactForm" method="POST" name="contact" netlify-honeypot="bot-field" novalidate="">
+<input name="form-name" type="hidden" value="contact"/>
+<p hidden="">
+<label>لا تعبئ هذا الحقل إذا كنت إنسانًا <input name="bot-field"/></label>
+</p>
+<h2><mark>معلوماتك</mark></h2>
+<label for="name">أدخل اسمك</label>
+<input id="name" name="name" placeholder="مثال: Ahmad" type="text"/>
+<label for="phone">رقم الهاتف</label>
+<input id="phone" name="phone" placeholder="مثال: 12345678" type="text"/>
+<label for="email">البريد الإلكتروني</label>
+<input id="email" name="email" placeholder="example@gmail.com" type="text"/>
+<hr/>
+<h2><mark>نوع الرسالة</mark></h2>
+<label for="topic">اختر سبب التواصل</label>
+<select id="topic" name="topic">
+<option value="">اختر</option>
+<option value="packages">استفسار عن الباقات</option>
+<option value="services">استفسار عن الخدمات</option>
+<option value="custom">طلب حزمة مخصصة</option>
+<option value="reservation">مساعدة في الحجز</option>
+<option value="other">أخرى</option>
+</select>
+<label for="date">تاريخ مناسب للتواصل (اختياري)</label>
+<input id="date" name="date" type="datetime-local"/>
+<label for="message">اكتب رسالتك</label>
+<textarea id="message" maxlength="200" name="message" placeholder="اكتب التفاصيل هنا"></textarea>
+<p class="form-message" id="formMessage"></p>
+<button class="send-btn" type="submit">إرسال</button>
+</form>
+<div class="info-box">
+<h3>معلومات الاتصال</h3>
+<p>📍 هونغ كونغ</p>
+<p>☎️ +852 0000 0000</p>
+<p>✉️ lovinghomes@gmail.com</p>
+<p class="note">ملاحظة: هذه بيانات نموذجية — غيّرها حسب معلوماتك الحقيقية</p>
+</div>
+</div>
+<div class="footer">Loving Homes - فندق الكلاب | هونغ كونغ</div>
+<audio id="successSound" preload="auto" src="sound-effects/success.mp3"></audio>
+<audio id="errorSound" preload="auto" src="sound-effects/error.mp3"></audio>
+<script src="js/language.js"></script><script src="js/theme.js"></script>
   <script src="js/contact.js"></script>
 </body>
 </html>
