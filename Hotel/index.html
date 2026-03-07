@@ -30,7 +30,7 @@
     </div>
 
     <a href="reservation.html">احجز إقامة</a>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+    <a href="javascript:void(0);" class="icon" onclick="toggleNav()">&#9776;</a>
   </div>
 
   <marquee class="m1m">
@@ -45,7 +45,6 @@
     <p class="subtitle">فندق الكلاب في هونغ كونغ — رعاية وراحة مثل البيت</p>
   </div>
 
-  <!-- SOCIAL HEADER -->
   <section class="social-header">
     <h2>Loving Homes</h2>
 
@@ -54,9 +53,9 @@
         <i class="fa fa-whatsapp"></i>
       </a>
 
-<a href="https://discord.com/" class="social-circle discord" target="_blank" rel="noopener" aria-label="Discord">
-  <img src="img/discord(1).png" alt="Discord">
-</a>
+      <a href="https://discord.com/" class="social-circle discord" target="_blank" rel="noopener" aria-label="Discord">
+        <img src="img/discord(1).png" alt="Discord">
+      </a>
 
       <a href="https://www.instagram.com/" class="social-circle instagram" target="_blank" rel="noopener" aria-label="Instagram">
         <i class="fa fa-instagram"></i>
@@ -191,6 +190,28 @@
   <div class="footer">
     Loving Homes - فندق الكلاب | هونغ كونغ
   </div>
+
+  <!-- Netlify hidden forms -->
+  <form name="contact" data-netlify="true" hidden>
+    <input type="text" name="name">
+    <input type="text" name="phone">
+    <input type="text" name="email">
+    <input type="text" name="topic">
+    <input type="datetime-local" name="date">
+    <textarea name="message"></textarea>
+  </form>
+
+  <form name="booking" data-netlify="true" hidden>
+    <input type="text" name="name">
+    <input type="text" name="phone">
+    <input type="text" name="email">
+    <input type="text" name="package">
+    <input type="text" name="stayDays">
+    <input type="text" name="dogSize">
+    <input type="text" name="roomType">
+    <input type="date" name="checkin">
+    <textarea name="notes"></textarea>
+  </form>
 
   <script src="js/index.js"></script>
 </body>
