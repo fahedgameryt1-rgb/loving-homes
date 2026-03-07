@@ -26,18 +26,14 @@ document.addEventListener("click", function(e){
   if(drop && !drop.contains(e.target)) drop.classList.remove("open");
 });
 
-/* Validation + submit */
 document.addEventListener("DOMContentLoaded", function(){
   var form = document.getElementById("contactForm");
   var formMessage = document.getElementById("formMessage");
-  var successSound = document.getElementById("successSound");
   var errorSound = document.getElementById("errorSound");
 
   if(!form) return;
 
   form.addEventListener("submit", function(e){
-    e.preventDefault();
-
     var name = document.getElementById("name").value.trim();
     var phone = document.getElementById("phone").value.trim();
     var email = document.getElementById("email").value.trim();
@@ -45,51 +41,42 @@ document.addEventListener("DOMContentLoaded", function(){
     var message = document.getElementById("message").value.trim();
 
     if(!name || name.length < 3 || name.length > 20){
+      e.preventDefault();
       showError("الرجاء إدخال اسم صحيح من 3 إلى 20 حرف");
       return;
     }
 
     if(!phone || !/^\d{8,12}$/.test(phone)){
+      e.preventDefault();
       showError("رقم الهاتف يجب أن يكون بين 8 و 12 رقم");
       return;
     }
 
     if(!email || !/^[a-zA-Z0-9._%+-]+@gmail\.com$/.test(email)){
+      e.preventDefault();
       showError("البريد الإلكتروني يجب أن يكون بصيغة صحيحة وينتهي بـ gmail.com");
       return;
     }
 
     if(!topic){
+      e.preventDefault();
       showError("الرجاء اختيار سبب التواصل");
       return;
     }
 
     if(!message || message.length < 10){
+      e.preventDefault();
       showError("الرجاء كتابة رسالة واضحة لا تقل عن 10 أحرف");
       return;
     }
 
     if(message.length > 200){
+      e.preventDefault();
       showError("الرسالة يجب ألا تتجاوز 200 حرف");
       return;
     }
 
-    var formData = new FormData(form);
-
-    fetch("/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      body: new URLSearchParams(formData).toString()
-    })
-    .then(function(){
-      showSuccess("تم إرسال رسالتك بنجاح");
-      form.reset();
-    })
-    .catch(function(){
-      showError("حدث خطأ أثناء الإرسال");
-    });
+    // إذا كل شيء صحيح سيُرسل الفورم مباشرة إلى Netlify
   });
 
   function showError(text){
@@ -101,18 +88,6 @@ document.addEventListener("DOMContentLoaded", function(){
     if(errorSound){
       errorSound.currentTime = 0;
       errorSound.play().catch(function(){});
-    }
-  }
-
-  function showSuccess(text){
-    if(formMessage){
-      formMessage.textContent = text;
-      formMessage.style.color = "green";
-    }
-
-    if(successSound){
-      successSound.currentTime = 0;
-      successSound.play().catch(function(){});
     }
   }
 });
