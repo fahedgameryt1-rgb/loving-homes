@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="REMAS">
+  <meta name="keywords" content="Loving Homes, فندق كلاب, باقات الإقامة, Premium, Classic, Daily">
+  <title>الباقات | Loving Homes</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/packages.css">
+</head>
+
+<body>
+
+  <!-- القائمة (نفس الرئيسية والخدمات) -->
+  <div class="topnav" id="myTopnav">
+    <a href="index.html">الرئيسية</a>
+    <a href="services.html">خدماتنا</a>
+    <a href="packages.html" class="active">الباقات</a>
+    <a href="tips.html">نصائح ومساعدة</a>
+
+    <div class="dropdown" id="companyDrop">
+      <button class="dropbtn" type="button" onclick="toggleCompanyDropdown(event)">
+        الشركة <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="about.html">حكايتنا</a>
+        <a href="contact.html">تواصل معنا</a>
+      </div>
+    </div>
+
+    <a href="reservation.html">احجز إقامة</a>
+    <a href="javascript:void(0);" class="icon" onclick="toggleNav()">&#9776;</a>
+  </div>
+
+  <marquee class="m1m">☆*:. اختر الباقة المناسبة لكلبك في Loving Homes واستمتع براحة البال…｡.:*☆</marquee>
+
+  <div class="logo">
+    <img src="../img/logo.png" alt="logo">
+    <h1>Loving Homes</h1>
+    <p class="subtitle">باقات الإقامة لفندق الكلاب في هونغ كونغ</p>
+  </div>
+
+  <hr>
+  <h3 class="section-title">☆ <mark>الباقات المتاحة</mark></h3>
+  <hr>
+
+  <!-- الباقات -->
+  <div class="products-container">
+
+    <div class="product">
+      <p class="package-title">الباقة المميزة</p>
+      <img src="../img/package-premium.jpg" alt="الباقة المميزة">
+      <p class="package-details">4 تمشيات / 4 أنشطة يومياً</p>
+      <p class="package-details">منطقة عشب خاصة</p>
+      <p class="package-details">تحديثات وصور يومية للمالك</p>
+      <p class="package-details">مكافآت خاصة حسب الاتفاق</p>
+      <button class="cart" type="button" onclick="bookPackage('الباقة المميزة')">
+        <h5>احجز الباقة الآن</h5>
+      </button>
+    </div>
+
+    <div class="product">
+      <p class="package-title">الباقة الكلاسيكية</p>
+      <img src="../img/classic.jpg" alt="الباقة الكلاسيكية">
+      <p class="package-details">3 تمشيات / 3 أنشطة يومياً</p>
+      <p class="package-details">حظيرة لعب داخلية + منطقة استرخاء</p>
+      <p class="package-details">جلسة حلاقة وتنظيف</p>
+      <p class="package-details">مناسبة لمعظم الكلاب</p>
+      <button class="cart" type="button" onclick="bookPackage('الباقة الكلاسيكية')">
+        <h5>احجز الباقة الآن</h5>
+      </button>
+    </div>
+
+    <div class="product">
+      <p class="package-title">الباقة اليومية</p>
+      <img src="../img/Day.jpg" alt="الباقة اليومية">
+      <p class="package-details">تمشيتين يومياً</p>
+      <p class="package-details">لعب خارجي + مسار رشاقة</p>
+      <p class="package-details">حفرة رمل للعب</p>
+      <p class="package-details">خيار مناسب للزيارات القصيرة</p>
+      <button class="cart" type="button" onclick="bookPackage('الباقة اليومية')">
+        <h5>احجز الباقة الآن</h5>
+      </button>
+    </div>
+
+  </div>
+
+  <hr>
+  <h3 class="section-title">☆ <mark>نموذج حزمة مخصصة</mark></h3>
+  <hr>
+
+  <!-- نموذج الحزمة المخصصة -->
+  <div class="form-container">
+    <form id="bookingForm" novalidate>
+      <label for="name">أدخل اسمك</label>
+      <input type="text" id="name" name="name" placeholder="مثال: Ahmad">
+
+      <label for="phone">أدخل رقمك الخاص</label>
+      <input type="text" id="phone" name="phone" placeholder="مثال: 0791234567">
+
+      <label for="email">أدخل بريدك الإلكتروني</label>
+      <input type="text" id="email" name="email" placeholder="مثال: example@gmail.com">
+
+      <label for="stayDays">عدد أيام الإقامة</label>
+      <select id="stayDays" name="stayDays">
+        <option value="">اختر عدد الأيام</option>
+        <option value="1">ليلة</option>
+        <option value="2">ليلتان</option>
+        <option value="3">ثلاث ليال</option>
+        <option value="4">أربع ليال</option>
+        <option value="5">خمس ليال</option>
+      </select>
+
+      <label for="dogSize">حجم الكلب</label>
+      <select id="dogSize" name="dogSize">
+        <option value="">اختر الحجم</option>
+        <option value="small">صغير</option>
+        <option value="medium">متوسط</option>
+        <option value="large">كبير</option>
+      </select>
+
+      <label for="needs">خدمات إضافية</label>
+      <select id="needs" name="needs">
+        <option value="">اختر خدمة (اختياري)</option>
+        <option value="spa">حلاقة ومنتجع</option>
+        <option value="extraWalks">تمشية إضافية</option>
+        <option value="privateLawn">عشب خاص</option>
+        <option value="dailyPhotos">تحديثات وصور يومية</option>
+      </select>
+
+      <label for="comments">ملاحظات (حساسية، أدوية، سلوك...)</label>
+      <textarea id="comments" name="comments" style="height:200px" placeholder="اكتب ملاحظاتك هنا"></textarea>
+
+      <input type="submit" value="إرسال">
+    </form>
+  </div>
+
+  <div class="footer">
+    Loving Homes - فندق الكلاب | هونغ كونغ
+  </div>
+
+  <script src="../js/packages.js"></script>
+</body>
+</html>

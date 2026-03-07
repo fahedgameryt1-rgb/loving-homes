@@ -1,0 +1,190 @@
+:root{
+  --main:#47797A;
+  --white:#FFFFFF;
+  --soft:#DAE4E4;
+  --dark:#0a2025;
+}
+
+body{
+  margin:0;
+  font-family:'Riqaa', sans-serif;
+  background:var(--main);
+}
+
+/* NAV */
+.topnav{
+  overflow:hidden;
+  background:var(--main);
+  direction:rtl;
+  padding-top:15px;
+}
+.topnav a{
+  float:right;
+  display:block;
+  color:var(--white);
+  text-align:center;
+  padding:14px 16px;
+  text-decoration:none;
+  font-size:large;
+}
+.active{ color:var(--white); }
+.topnav .icon{ display:none; }
+
+.dropdown{ float:right; overflow:hidden; }
+.dropdown .dropbtn{
+  font-size:large;
+  border:none;
+  outline:none;
+  color:var(--white);
+  padding:14px 16px;
+  background:inherit;
+  font-family:inherit;
+  cursor:pointer;
+}
+.dropdown-content{
+  display:none;
+  position:absolute;
+  background:var(--white);
+  min-width:180px;
+  z-index:10;
+  border:1px solid var(--soft);
+  border-radius:8px;
+  overflow:hidden;
+}
+.dropdown-content a{
+  float:none;
+  color:var(--dark);
+  padding:12px 16px;
+  text-decoration:none;
+  display:block;
+  text-align:right;
+  font-size:large;
+}
+.topnav a:hover, .dropdown:hover .dropbtn{
+  background:var(--soft);
+  color:var(--dark);
+}
+.dropdown:hover .dropdown-content{ display:block; }
+
+/* Responsive */
+@media screen and (max-width:600px){
+  .topnav a:not(:first-child), .dropdown .dropbtn{ display:none; }
+  .topnav a.icon{ float:left; display:block; }
+  .topnav.responsive{ position:relative; }
+  .topnav.responsive .icon{ position:absolute; left:0; top:0; }
+  .topnav.responsive a{ float:none; display:block; text-align:right; }
+  .topnav.responsive .dropdown{ float:none; }
+  .topnav.responsive .dropdown-content{ position:relative; display:none; border:none; border-radius:0; }
+  .topnav.responsive .dropdown.open .dropdown-content{ display:block; }
+  .topnav.responsive .dropdown .dropbtn{ display:block; width:100%; text-align:right; }
+}
+
+/* Marquee + Logo */
+.m1m{
+  color:var(--dark);
+  font-size:20px;
+  font-weight:bold;
+  background:var(--soft);
+  padding:10px;
+  border-radius:6px;
+  text-align:center;
+  margin:10px 12px;
+}
+.logo{ text-align:center; margin-top:14px; }
+.logo img{ width:160px; }
+.logo h1{ color:var(--dark); font-size:40px; margin:10px 0 0; }
+.subtitle{ color:var(--dark); margin:6px 0 0; font-size:18px; }
+
+.page-title{
+  text-align:right;
+  margin-right:30px;
+  color:var(--dark);
+}
+
+/* Content layout (image + text) */
+.container{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-around;
+  align-items:center;
+  padding:20px;
+}
+
+.image-text{
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  margin:16px;
+  width:100%;
+  box-sizing:border-box;
+  background:var(--white);
+  border-radius:12px;
+  overflow:hidden;
+  border:2px solid var(--soft);
+}
+.image-text.reverse{ flex-direction:row-reverse; }
+
+.image-text img{
+  max-width:40%;
+  height:auto;
+}
+
+.text-content{
+  flex:1;
+  padding:0 20px;
+  text-align:right;
+}
+.text-content h2{
+  font-size:24px;
+  margin-bottom:10px;
+  color:var(--dark);
+}
+.text-content p{
+  font-size:18px;
+  line-height:1.8;
+  color:var(--dark);
+}
+
+@media screen and (max-width:600px){
+  .image-text, .image-text.reverse{ flex-direction:column; }
+  .image-text img{
+    max-width:100%;
+    width:100%;
+  }
+  .text-content{ padding:12px; }
+}
+
+/* CTA */
+.cta-box{
+  background:var(--dark);
+  color:var(--soft);
+  margin:18px;
+  border-radius:12px;
+  padding:22px;
+  text-align:center;
+}
+.cta-box h2{ margin:0 0 10px; color:var(--white); }
+.cta-box p{ margin:0 0 12px; font-size:18px; line-height:1.7; }
+
+.cta{ display:flex; justify-content:center; gap:10px; flex-wrap:wrap; }
+.btn{
+  display:inline-block;
+  padding:10px 16px;
+  border-radius:10px;
+  text-decoration:none;
+  font-size:large;
+  border:2px solid var(--white);
+}
+.btn.primary{ background:var(--soft); color:var(--dark); border-color:var(--soft); }
+.btn.secondary{ background:transparent; color:var(--white); border-color:var(--white); }
+.btn:hover{ opacity:0.9; }
+
+/* Footer */
+.footer{
+  background:var(--dark);
+  color:var(--soft);
+  font-size:18px;
+  text-align:center;
+  padding:15px 0;
+  margin-top:20px;
+}

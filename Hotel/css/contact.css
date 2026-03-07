@@ -1,0 +1,289 @@
+:root{
+  --main:#47797A;
+  --white:#FFFFFF;
+  --soft:#DAE4E4;
+  --dark:#0a2025;
+}
+
+body{
+  margin:0;
+  font-family:'Riqaa', sans-serif;
+  background:var(--main);
+}
+
+/* NAV */
+.topnav{
+  overflow:hidden;
+  background:var(--main);
+  direction:rtl;
+  padding-top:15px;
+}
+
+.topnav a{
+  float:right;
+  display:block;
+  color:var(--white);
+  text-align:center;
+  padding:14px 16px;
+  text-decoration:none;
+  font-size:large;
+}
+
+.topnav .icon{
+  display:none;
+}
+
+.dropdown{
+  float:right;
+  overflow:hidden;
+}
+
+.dropdown .dropbtn{
+  font-size:large;
+  border:none;
+  outline:none;
+  color:var(--white);
+  padding:14px 16px;
+  background:inherit;
+  font-family:inherit;
+  cursor:pointer;
+  margin:0;
+}
+
+.dropdown-content{
+  display:none;
+  position:absolute;
+  background:var(--white);
+  min-width:180px;
+  z-index:10;
+  border:1px solid var(--soft);
+  border-radius:8px;
+  overflow:hidden;
+}
+
+.dropdown-content a{
+  float:none;
+  color:var(--dark);
+  padding:12px 16px;
+  text-decoration:none;
+  display:block;
+  text-align:right;
+  font-size:large;
+  background:var(--white);
+}
+
+.topnav a:hover,
+.dropdown:hover .dropbtn{
+  background:var(--soft);
+  color:var(--dark);
+}
+
+.dropdown:hover .dropdown-content{
+  display:block;
+}
+
+.active-dd{
+  font-weight:bold;
+  background:var(--soft);
+}
+
+/* Responsive */
+@media screen and (max-width:600px){
+  .topnav a:not(:first-child),
+  .dropdown .dropbtn{
+    display:none;
+  }
+
+  .topnav a.icon{
+    float:left;
+    display:block;
+  }
+
+  .topnav.responsive{
+    position:relative;
+  }
+
+  .topnav.responsive .icon{
+    position:absolute;
+    left:0;
+    top:0;
+  }
+
+  .topnav.responsive a{
+    float:none;
+    display:block;
+    text-align:right;
+  }
+
+  .topnav.responsive .dropdown{
+    float:none;
+  }
+
+  .topnav.responsive .dropdown-content{
+    position:relative;
+    display:none;
+    border:none;
+    border-radius:0;
+  }
+
+  .topnav.responsive .dropdown .dropbtn{
+    display:block;
+    width:100%;
+    text-align:right;
+  }
+
+  .topnav.responsive .dropdown.open .dropdown-content{
+    display:block;
+  }
+}
+
+/* UI */
+.m1m{
+  color:var(--dark);
+  font-size:20px;
+  font-weight:bold;
+  background:var(--soft);
+  padding:10px;
+  border-radius:6px;
+  text-align:center;
+  margin:10px 12px;
+}
+
+.logo{
+  text-align:center;
+  margin-top:14px;
+}
+
+.logo img{
+  width:160px;
+}
+
+.logo h1{
+  color:var(--dark);
+  font-size:40px;
+  margin:10px 0 0;
+}
+
+.subtitle{
+  color:var(--dark);
+  margin:6px 0 0;
+  font-size:18px;
+}
+
+mark{
+  color:var(--white);
+  background:var(--dark);
+  padding:2px 10px;
+  border-radius:8px;
+}
+
+.form-wrapper{
+  display:grid;
+  grid-template-columns:1.2fr 0.8fr;
+  gap:16px;
+  padding:18px;
+}
+
+@media screen and (max-width:900px){
+  .form-wrapper{
+    grid-template-columns:1fr;
+  }
+}
+
+form{
+  background:var(--white);
+  border:2px solid var(--soft);
+  border-radius:14px;
+  padding:16px;
+  text-align:right;
+}
+
+label{
+  display:block;
+  margin-top:10px;
+  color:var(--dark);
+  font-size:18px;
+}
+
+input[type=text],
+input[type=datetime-local],
+select,
+textarea{
+  width:100%;
+  padding:12px;
+  border:1px solid var(--soft);
+  border-radius:10px;
+  box-sizing:border-box;
+  margin-top:6px;
+  margin-bottom:10px;
+  font-family:inherit;
+  font-size:17px;
+}
+
+input[type=text]:focus,
+input[type=datetime-local]:focus,
+select:focus,
+textarea:focus{
+  outline:none;
+  border-color:var(--main);
+  box-shadow:0 0 0 2px rgba(71,121,122,0.25);
+}
+
+textarea{
+  min-height:140px;
+  resize:vertical;
+}
+
+.send-btn{
+  width:100%;
+  background:var(--dark);
+  color:var(--white);
+  border:none;
+  padding:12px 20px;
+  border-radius:10px;
+  cursor:pointer;
+  font-size:18px;
+  margin-top:10px;
+  transition:0.3s;
+}
+
+.send-btn:hover{
+  opacity:0.9;
+}
+
+.form-message{
+  margin:12px 0;
+  font-size:18px;
+  font-weight:bold;
+  text-align:center;
+  min-height:24px;
+}
+
+.info-box{
+  background:var(--dark);
+  color:var(--soft);
+  border-radius:14px;
+  padding:16px;
+  line-height:1.8;
+}
+
+.info-box h3{
+  margin-top:0;
+  color:var(--white);
+}
+
+.note{
+  margin-top:10px;
+  font-size:16px;
+  opacity:0.9;
+}
+
+/* Footer */
+.footer{
+  background:var(--dark);
+  color:var(--soft);
+  text-align:center;
+  padding:18px 0;
+  margin-top:10px;
+  font-size:18px;
+}

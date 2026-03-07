@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="REMAS" />
+  <meta name="keywords" content="Loving Homes, Tips, Help, فندق كلاب, نصائح, مساعدة" />
+  <title>نصائح ومساعدة | Loving Homes</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="../css/tips.css" />
+</head>
+
+<body>
+
+  <!-- NAV (نفس الرئيسية والخدمات والباقات) -->
+  <div class="topnav" id="myTopnav">
+    <a href="index.html">الرئيسية</a>
+    <a href="services.html">خدماتنا</a>
+    <a href="packages.html">الباقات</a>
+    <a href="tips.html" class="active">نصائح ومساعدة</a>
+
+    <div class="dropdown" id="companyDrop">
+      <button class="dropbtn" type="button" onclick="toggleCompanyDropdown(event)">
+        الشركة <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="about.html">حكايتنا</a>
+        <a href="contact.html">تواصل معنا</a>
+      </div>
+    </div>
+
+    <a href="reservation.html">احجز إقامة</a>
+    <a href="javascript:void(0);" class="icon" onclick="toggleNav()">&#9776;</a>
+  </div>
+
+  <marquee class="m1m">☆*:. نصائح بسيطة تساعدك تجهّز كلبك للإقامة وتختار الباقة المناسبة…｡.:*☆</marquee>
+
+  <div class="logo">
+    <img src="../img/logo.png" alt="logo">
+    <h1>Loving Homes</h1>
+    <p class="subtitle">نصائح ومساعدة قبل وأثناء الإقامة</p>
+  </div>
+
+  <h2 class="page-title">-: أهم النصائح</h2>
+
+  <!-- TIP CARDS -->
+  <div class="cards">
+
+    <div class="card">
+      <h3>تطعيمات وصحة الكلب</h3>
+      <p>تأكد من التطعيمات وبلغنا عن الحساسية أو الأدوية قبل الوصول.</p>
+      <div class="actions">
+        <button class="btn" type="button" onclick="showTip('vaccines')">عرض تفاصيل</button>
+        <span class="heart" onclick="toggleHeart(this)">&#10084;</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>ماذا أحضر معك؟</h3>
+      <p>يفضل إحضار تعليمات الطعام أو طعامه الخاص ولعبة صغيرة تساعده يرتاح.</p>
+      <div class="actions">
+        <button class="btn" type="button" onclick="showTip('bring')">عرض تفاصيل</button>
+        <span class="heart" onclick="toggleHeart(this)">&#10084;</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>اختيار الباقة المناسبة</h3>
+      <p>الكلب النشيط يناسبه مميزة أو كلاسيكية والهادئ تناسبه يومية أو كلاسيكية.</p>
+      <div class="actions">
+        <button class="btn" type="button" onclick="showTip('package')">عرض تفاصيل</button>
+        <span class="heart" onclick="toggleHeart(this)">&#10084;</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>الكلاب الاجتماعية والقلقة</h3>
+      <p>إذا كلبك يقلق من الكلاب الأخرى خبرنا لنرتب مساحة مناسبة.</p>
+      <div class="actions">
+        <button class="btn" type="button" onclick="showTip('behavior')">عرض تفاصيل</button>
+        <span class="heart" onclick="toggleHeart(this)">&#10084;</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>التغذية أثناء الإقامة</h3>
+      <p>حدد كمية الوجبات وعددها ووقت الإطعام وأي ممنوعات غذائية.</p>
+      <div class="actions">
+        <button class="btn" type="button" onclick="showTip('food')">عرض تفاصيل</button>
+        <span class="heart" onclick="toggleHeart(this)">&#10084;</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>التواصل والتحديثات</h3>
+      <p>بعض الباقات تشمل صور وتحديثات يومية للمالك للاطمئنان.</p>
+      <div class="actions">
+        <button class="btn" type="button" onclick="showTip('updates')">عرض تفاصيل</button>
+        <span class="heart" onclick="toggleHeart(this)">&#10084;</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq">
+    <h2>أسئلة شائعة</h2>
+
+    <details>
+      <summary>هل توجد رعاية بيطرية 24 ساعة؟</summary>
+      <p>نعم تتوفر رعاية بيطرية للطوارئ على مدار الساعة.</p>
+    </details>
+
+    <details>
+      <summary>هل يوجد نقل من وإلى الفندق؟</summary>
+      <p>نعم حسب المنطقة والتوافر ويمكن ترتيب ذلك عند الحجز.</p>
+    </details>
+
+    <details>
+      <summary>هل يمكن عمل حزمة مخصصة؟</summary>
+      <p>نعم للحالات الخاصة أو الإقامات الطويلة عبر نموذج الحزمة المخصصة أو التواصل معنا.</p>
+    </details>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-box">
+    <h2>محتاج مساعدة أكثر؟</h2>
+    <p>إذا عندك أسئلة خاصة بحالة كلبك تواصل معنا أو احجز إقامة مباشرة.</p>
+    <div class="cta">
+      <a class="link-btn" href="contact.html">تواصل معنا</a>
+      <a class="link-btn dark" href="reservation.html">احجز إقامة</a>
+    </div>
+  </div>
+
+  <div class="footer">Loving Homes - فندق الكلاب | هونغ كونغ</div>
+
+  <script src="../js/tips.js"></script>
+</body>
+</html>

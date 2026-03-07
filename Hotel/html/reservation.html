@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="REMAS" />
+  <meta name="keywords" content="Loving Homes, Book a Stay, حجز إقامة, فندق كلاب, هونغ كونغ" />
+  <title>احجز إقامة | Loving Homes</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="../css/reservation.css" />
+</head>
+
+<body>
+
+  <div class="topnav" id="myTopnav">
+    <a href="index.html">الرئيسية</a>
+    <a href="services.html">خدماتنا</a>
+    <a href="packages.html">الباقات</a>
+    <a href="tips.html">نصائح ومساعدة</a>
+
+    <div class="dropdown" id="companyDrop">
+      <button class="dropbtn" type="button" onclick="toggleCompanyDropdown(event)">
+        الشركة <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="about.html">حكايتنا</a>
+        <a href="contact.html">تواصل معنا</a>
+      </div>
+    </div>
+
+    <a href="reservation.html" class="active">احجز إقامة</a>
+    <a href="javascript:void(0);" class="icon" onclick="toggleNav()">&#9776;</a>
+  </div>
+
+  <marquee class="m1m">☆*:. احجز إقامة لكلبك في Loving Homes بسهولة وخلينا نهتم فيه…｡.:*☆</marquee>
+
+  <div class="logo">
+    <img src="../img/logo.png" alt="شعار Loving Homes">
+    <h1>Loving Homes</h1>
+    <p class="subtitle">نموذج حجز إقامة لفندق الكلاب</p>
+  </div>
+
+  <div class="container">
+    <form id="bookingForm" name="booking" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+      <input type="hidden" name="form-name" value="booking">
+
+      <p hidden>
+        <label>لا تعبئ هذا الحقل إذا كنت إنسانًا <input name="bot-field"></label>
+      </p>
+
+      <h2><mark>معلومات الحجز</mark></h2>
+
+      <label for="name">اسم صاحب الحجز</label>
+      <input type="text" id="name" name="name" placeholder="مثال: Ahmad" />
+
+      <label for="phone">رقم الهاتف</label>
+      <input type="text" id="phone" name="phone" placeholder="مثال: 12345678" />
+
+      <label for="email">البريد الإلكتروني</label>
+      <input type="text" id="email" name="email" placeholder="example@gmail.com" />
+
+      <hr>
+
+      <h2><mark>تفاصيل الإقامة</mark></h2>
+
+      <label for="package">اختر الباقة</label>
+      <select id="package" name="package">
+        <option value="">اختر الباقة</option>
+        <option value="premium">الباقة المميزة</option>
+        <option value="classic">الباقة الكلاسيكية</option>
+        <option value="daily">الباقة اليومية</option>
+        <option value="custom">حزمة مخصصة</option>
+      </select>
+
+      <label for="stayDays">عدد أيام الإقامة</label>
+      <select id="stayDays" name="stayDays">
+        <option value="">اختر عدد الأيام</option>
+        <option value="1">ليلة</option>
+        <option value="2">ليلتان</option>
+        <option value="3">ثلاث ليال</option>
+        <option value="4">أربع ليال</option>
+        <option value="5">خمس ليال</option>
+      </select>
+
+      <label for="dogSize">حجم الكلب</label>
+      <select id="dogSize" name="dogSize">
+        <option value="">اختر الحجم</option>
+        <option value="small">صغير</option>
+        <option value="medium">متوسط</option>
+        <option value="large">كبير</option>
+      </select>
+
+      <label for="roomType">نوع الغرفة</label>
+      <select id="roomType" name="roomType">
+        <option value="">اختر نوع الغرفة</option>
+        <option value="standard">غرفة عادية</option>
+        <option value="comfort">غرفة مريحة</option>
+        <option value="private">غرفة خاصة (هدوء أكثر)</option>
+      </select>
+
+      <label for="checkin">تاريخ الوصول</label>
+      <input type="date" id="checkin" name="checkin" />
+
+      <label for="notes">ملاحظات (حساسية، أدوية، سلوك...)</label>
+      <textarea id="notes" name="notes" placeholder="اكتب ملاحظاتك هنا حتى 150 حرف"></textarea>
+
+      <p id="formMessage" class="form-message"></p>
+
+      <button type="submit" class="send-btn">إرسال الحجز</button>
+    </form>
+  </div>
+
+  <div class="footer">Loving Homes - فندق الكلاب | هونغ كونغ</div>
+
+  <audio id="successSound" src="../sound-effects/success.mp3" preload="auto"></audio>
+  <audio id="errorSound" src="../sound-effects/error.mp3" preload="auto"></audio>
+
+  <script src="../js/reservation.js"></script>
+</body>
+</html>
