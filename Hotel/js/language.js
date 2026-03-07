@@ -1,4 +1,3 @@
-
 const translations = {
   ar: {
     common: {
@@ -269,28 +268,51 @@ function applyPage(lang){
   document.title = t.title;
 
   if(key === 'index'){
+    const sections = document.querySelectorAll('.section');
+
     setText(document.querySelector('.m1m'), t.marquee);
     setText(document.querySelector('.subtitle'), t.subtitle);
     setText(document.querySelector('.hero-text h2'), t.heroTitle);
     setText(document.querySelector('.hero-text p'), t.heroText);
     setTextAll('.hero .cta .btn', t.heroBtns);
     setTextAll('.quick-points li', t.quick);
-    setTextAll('.section > h2', t.sectionTitles);
-    setTextAll('.section:nth-of-type(2) .card h3', t.cardTitles1);
-    setTextAll('.section:nth-of-type(2) .card p', t.cardTexts1);
-    setTextAll('.section:nth-of-type(3) .feature h3', t.featureTitles);
-    setTextAll('.section:nth-of-type(3) .feature p', t.featureTexts);
-    setText(document.querySelector('.section:nth-of-type(3) .center .btn'), t.servicesBtn);
-    setTextAll('.section:nth-of-type(4) .pkg h3', t.pkgTitles);
-    setTextAll('.section:nth-of-type(4) .pkg p', t.pkgTexts);
-    setTextAll('.section:nth-of-type(4) .pkg .link', [t.pkgLink,t.pkgLink,t.pkgLink]);
-    setHTML(document.querySelector('.section:nth-of-type(4) .note'), t.note);
-    setTextAll('.section:nth-of-type(5) .tips li', t.tips);
-    setText(document.querySelector('.section:nth-of-type(5) .center .btn'), t.moreTips);
+
+    if(sections[0]) setText(sections[0].querySelector('h2'), t.sectionTitles[0]);
+    if(sections[1]) setText(sections[1].querySelector('h2'), t.sectionTitles[1]);
+    if(sections[2]) setText(sections[2].querySelector('h2'), t.sectionTitles[2]);
+    if(sections[3]) setText(sections[3].querySelector('h2'), t.sectionTitles[3]);
+
+    if(sections[0]){
+      sections[0].querySelectorAll('.card h3').forEach((el,i)=> setText(el, t.cardTitles1[i]));
+      sections[0].querySelectorAll('.card p').forEach((el,i)=> setText(el, t.cardTexts1[i]));
+    }
+
+    if(sections[1]){
+      sections[1].querySelectorAll('.feature h3').forEach((el,i)=> setText(el, t.featureTitles[i]));
+      sections[1].querySelectorAll('.feature p').forEach((el,i)=> setText(el, t.featureTexts[i]));
+      const servicesBtn = sections[1].querySelector('.center .btn');
+      setText(servicesBtn, t.servicesBtn);
+    }
+
+    if(sections[2]){
+      sections[2].querySelectorAll('.pkg h3').forEach((el,i)=> setText(el, t.pkgTitles[i]));
+      sections[2].querySelectorAll('.pkg p').forEach((el,i)=> setText(el, t.pkgTexts[i]));
+      sections[2].querySelectorAll('.pkg .link').forEach((el)=> setText(el, t.pkgLink));
+      const note = sections[2].querySelector('.note');
+      setHTML(note, t.note);
+    }
+
+    if(sections[3]){
+      sections[3].querySelectorAll('.tips li').forEach((el,i)=> setText(el, t.tips[i]));
+      const moreTipsBtn = sections[3].querySelector('.center .btn');
+      setText(moreTipsBtn, t.moreTips);
+    }
+
     setText(document.querySelector('.contact-cta h2'), t.contactTitle);
     setText(document.querySelector('.contact-cta p'), t.contactText);
     setTextAll('.contact-cta .cta .btn', t.contactBtns);
   }
+
   if(key === 'services'){
     setText(document.querySelector('.m1m'), t.marquee);
     setText(document.querySelector('.subtitle'), t.subtitle);
@@ -301,26 +323,36 @@ function applyPage(lang){
     setText(document.querySelector('.cta-box p'), t.ctaText);
     setTextAll('.cta-box .btn', t.ctaBtns);
   }
+
   if(key === 'packages'){
     setText(document.querySelector('.m1m'), t.marquee);
     setText(document.querySelector('.subtitle'), t.subtitle);
+
     const marks = document.querySelectorAll('.section-title mark');
     if(marks[0]) marks[0].textContent = t.sectionTitle1.replace('☆ ','');
     if(marks[1]) marks[1].textContent = t.sectionTitle2.replace('☆ ','');
+
     setTextAll('.package-title', t.packageTitles);
     setTextAll('.package-details', t.details);
-    setTextAll('.cart h5', [t.bookNow,t.bookNow,t.bookNow]);
+    setTextAll('.cart h5', [t.bookNow, t.bookNow, t.bookNow]);
     setTextAll('form label', t.labels);
+
     const txtInputs = document.querySelectorAll('form input[type="text"]');
     if(txtInputs[0]) txtInputs[0].placeholder = t.placeholders[0];
     if(txtInputs[1]) txtInputs[1].placeholder = t.placeholders[1];
     if(txtInputs[2]) txtInputs[2].placeholder = t.placeholders[2];
-    const comments = document.querySelector('#comments'); if(comments) comments.placeholder = t.placeholders[3];
+
+    const comments = document.querySelector('#comments');
+    if(comments) comments.placeholder = t.placeholders[3];
+
     setOptionTexts('#stayDays', t.stayOptions);
     setOptionTexts('#dogSize', t.sizeOptions);
     setOptionTexts('#needs', t.needOptions);
-    const submit = document.querySelector('input[type="submit"]'); if(submit) submit.value = t.submit;
+
+    const submit = document.querySelector('input[type="submit"]');
+    if(submit) submit.value = t.submit;
   }
+
   if(key === 'tips'){
     setText(document.querySelector('.m1m'), t.marquee);
     setText(document.querySelector('.subtitle'), t.subtitle);
@@ -335,41 +367,52 @@ function applyPage(lang){
     setText(document.querySelector('.cta-box p'), t.ctaText);
     setTextAll('.cta-box .link-btn', t.ctaBtns);
   }
+
   if(key === 'about'){
     setText(document.querySelector('.m1m'), t.marquee);
     setText(document.querySelector('.subtitle'), t.subtitle);
-    const boxes = document.querySelectorAll('.about-box h2');
     setTextAll('.about-box h2', t.headings);
-    const ps = document.querySelectorAll('.about-box p');
     setTextAll('.about-box p', t.texts);
     setText(document.querySelector('.video-title'), t.videoTitle);
     setTextAll('.values li', t.values);
   }
+
   if(key === 'contact'){
     setText(document.querySelector('.m1m'), t.marquee);
     setText(document.querySelector('.subtitle'), t.subtitle);
     setTextAll('form h2 mark', t.h2s);
     setTextAll('form label', t.labels);
+
     const txtInputs = document.querySelectorAll('form input[type="text"]');
     if(txtInputs[0]) txtInputs[0].placeholder = t.placeholders[0];
     if(txtInputs[1]) txtInputs[1].placeholder = t.placeholders[1];
     if(txtInputs[2]) txtInputs[2].placeholder = t.placeholders[2];
-    const message = document.querySelector('#message'); if(message) message.placeholder = t.placeholders[3];
+
+    const message = document.querySelector('#message');
+    if(message) message.placeholder = t.placeholders[3];
+
     setOptionTexts('#topic', t.topicOptions);
     setText(document.querySelector('.send-btn'), t.submit);
     setText(document.querySelector('.info-box h3'), t.infoTitle);
-    const note = document.querySelector('.info-box .note'); if(note) note.textContent = t.note;
+
+    const note = document.querySelector('.info-box .note');
+    if(note) note.textContent = t.note;
   }
+
   if(key === 'reservation'){
     setText(document.querySelector('.m1m'), t.marquee);
     setText(document.querySelector('.subtitle'), t.subtitle);
     setTextAll('form h2 mark', t.h2s);
     setTextAll('form label', t.labels);
+
     const txtInputs = document.querySelectorAll('form input[type="text"]');
     if(txtInputs[0]) txtInputs[0].placeholder = t.placeholders[0];
     if(txtInputs[1]) txtInputs[1].placeholder = t.placeholders[1];
     if(txtInputs[2]) txtInputs[2].placeholder = t.placeholders[2];
-    const notes = document.querySelector('#notes'); if(notes) notes.placeholder = t.placeholders[3];
+
+    const notes = document.querySelector('#notes');
+    if(notes) notes.placeholder = t.placeholders[3];
+
     setOptionTexts('#package', t.packageOptions);
     setOptionTexts('#stayDays', t.stayOptions);
     setOptionTexts('#dogSize', t.sizeOptions);
@@ -385,6 +428,7 @@ function setLanguage(lang){
   applyCommon(chosen);
   applyPage(chosen);
 }
+
 window.setLanguage = setLanguage;
 
 document.addEventListener('DOMContentLoaded', function(){
