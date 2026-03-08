@@ -10,6 +10,11 @@ if (process.env.USERS_DATA) {
   }
 }
 
+// Helper function to verify user (can be enhanced with actual database)
+function findUserByEmail(email, password) {
+  return users.find(u => u.email === email && u.password === password);
+}
+
 exports.handler = async (event) => {
   const headers = {
     "Content-Type": "application/json",
@@ -42,7 +47,7 @@ exports.handler = async (event) => {
     }
 
     // Find user
-    const user = users.find(u => u.email === email && u.password === password);
+    const user = findUserByEmail(email, password);
 
     if (!user) {
       return {
@@ -53,6 +58,8 @@ exports.handler = async (event) => {
         })
       };
     }
+
+    const token = Buffer.from(`${user.email}:${user.id}`).toString('base64');
 
     return {
       statusCode: 200,
@@ -65,7 +72,7 @@ exports.handler = async (event) => {
           name: user.name, 
           email: user.email 
         },
-        token: Buffer.from(`${user.email}:${user.id}`).toString('base64')
+        token: token
       })
     };
   } catch (error) {

@@ -196,4 +196,184 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // GITHUB AUTHENTICATION
+  // GitHub OAuth Configuration
+  const GITHUB_CLIENT_ID = 'YOUR_GITHUB_CLIENT_ID'; // Need to be set in environment
+  const GITHUB_REDIRECT_URI = window.location.origin + '/netlify/functions/github-oauth-callback';
+
+  // Check if returning from GitHub OAuth
+  const urlParams = new URLSearchParams(window.location.search);
+  const githubCode = urlParams.get('code');
+  const githubUsername = urlParams.get('username');
+
+  if (githubCode && githubUsername) {
+    // Handle GitHub OAuth callback
+    handleGitHubOAuthCallback(githubUsername);
+  }
+
+  // GitHub Login Button Handler
+  const githubLoginBtn = document.getElementById("githubLoginBtn");
+  if (githubLoginBtn) {
+    githubLoginBtn.addEventListener("click", function(e) {
+      e.preventDefault();
+      initiateGitHubLogin();
+    });
+  }
+
+  // GitHub Signup Button Handler
+  const githubSignupBtn = document.getElementById("githubSignupBtn");
+  if (githubSignupBtn) {
+    githubSignupBtn.addEventListener("click", function(e) {
+      e.preventDefault();
+      initiateGitHubSignup();
+    });
+  }
+
+  // Function to get current GitHub user info
+  async function getCurrentGitHubUser(accessToken) {
+    try {
+      const response = await fetch('https://api.github.com/user', {
+        headers: {
+          'Authorization': `Bearer ${accessToken}`,
+          'Accept': 'application/vnd.github.v3+json'
+        }
+      });
+
+      if (response.ok) {
+        return await response.json();
+      }
+      return null;
+    } catch (error) {
+      console.error('Error fetching GitHub user:', error);
+      return null;
+    }
+  }
+
+  // Handle GitHub OAuth redirect/iframe approach
+  async function initiateGitHubLogin() {
+    // Step 1: Prompt user for their GitHub username
+    const githubUsername = prompt("أدخل اسم المستخدم على GitHub:");
+    
+    if (!githubUsername) {
+      const msgElement = document.getElementById("loginMsg");
+      if (msgElement) {
+        displayMessage(msgElement, "❌ تم الإلغاء", true);
+        playSound(errorSound);
+      }
+      return;
+    }
+
+    // Step 2: Authenticate with backend
+    await authenticateWithGitHub(githubUsername, 'login');
+  }
+
+  async function initiateGitHubSignup() {
+    // Step 1: Prompt user for their GitHub username
+    const githubUsername = prompt("أدخل اسم المستخدم على GitHub الجديد:");
+    
+    if (!githubUsername) {
+      const msgElement = document.getElementById("signupMsg");
+      if (msgElement) {
+        displayMessage(msgElement, "❌ تم الإلغاء", true);
+        playSound(errorSound);
+      }
+      return;
+    }
+
+    // Step 2: Authenticate with backend
+    await authenticateWithGitHub(githubUsername, 'signup');
+  }
+
+  // Main GitHub authentication function
+  async function authenticateWithGitHub(githubUsername, action) {
+    const msgElement = action === 'login' ? 
+      document.getElementById("loginMsg") : 
+      document.getElementById("signupMsg");
+
+    try {
+      displayMessage(msgElement, "⏳ جاري التحقق من اسم المستخدم...", false);
+
+      // Verify GitHub username exists by making API call
+      const userCheckResponse = await fetch(`https://api.github.com/users/${githubUsername}`);
+      
+      if (!userCheckResponse.ok) {
+        displayMessage(msgElement, `❌ اسم المستخدم "${githubUsername}" غير موجود على GitHub`, true);
+        playSound(errorSound);
+        return;
+      }
+
+      const githubUser = await userCheckResponse.json();
+      const email = githubUser.email || `${githubUsername}@github.com`;
+      const name = githubUser.name || githubUsername;
+
+      // Send to backend for authentication
+      const response = await fetch(`${API_URL}/github-auth`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          githubUsername,
+          email,
+          name,
+          action
+        })
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        // Save user info
+        localStorage.setItem("currentUser", JSON.stringify(result.user));
+        localStorage.setItem("authToken", result.token);
+        localStorage.setItem("loginMethod", "github");
+
+        displayMessage(msgElement, "✅ تم التحقق من GitHub بنجاح! سيتم التحويل...", false);
+        playSound(successSound);
+
+        setTimeout(() => {
+          window.location.href = action === 'login' ? "index.html" : "login.html";
+        }, 1500);
+      } else {
+        displayMessage(msgElement, `❌ ${result.error}`, true);
+        playSound(errorSound);
+      }
+
+    } catch (error) {
+      console.error('GitHub auth error:', error);
+      displayMessage(msgElement, "❌ حدث خطأ أثناء التحقق من GitHub", true);
+      playSound(errorSound);
+    }
+  }
+
+  // Handle GitHub OAuth callback
+  async function handleGitHubOAuthCallback(username) {
+    try {
+      const response = await fetch(`${API_URL}/github-auth`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          githubUsername: username
+        })
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        localStorage.setItem("currentUser", JSON.stringify(result.user));
+        localStorage.setItem("authToken", result.token);
+        localStorage.setItem("loginMethod", "github");
+
+        // Remove URL params and redirect
+        window.history.replaceState({}, document.title, window.location.pathname);
+        window.location.href = "index.html";
+      }
+    } catch (error) {
+      console.error('OAuth callback error:', error);
+      window.location.href = "login.html";
+    }
+  }
+
 });

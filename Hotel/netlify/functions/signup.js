@@ -10,6 +10,19 @@ if (process.env.USERS_DATA) {
   }
 }
 
+// Helper function to save users (can be enhanced with actual database)
+function persistUsers() {
+  try {
+    // In a real application, save to Netlify KV, MongoDB, Firebase, etc.
+    // For now, this is a placeholder for future database integration
+    console.log('Persisting user data:', users.length, 'users');
+    return true;
+  } catch (error) {
+    console.error('Error persisting users:', error);
+    return false;
+  }
+}
+
 exports.handler = async (event) => {
   const headers = {
     "Content-Type": "application/json",
@@ -76,14 +89,16 @@ exports.handler = async (event) => {
 
     // Add user
     const newUser = { 
-      id: Date.now(),
+      id: Date.now().toString(),
       name: name.trim(), 
       email: email.trim(), 
       password,
-      createdAt: new Date().toISOString()
+      createdAt: new Date().toISOString(),
+      loginMethod: 'email'
     };
 
     users.push(newUser);
+    persistUsers();
 
     return {
       statusCode: 201,
@@ -91,7 +106,8 @@ exports.handler = async (event) => {
       body: JSON.stringify({ 
         success: true,
         message: "تم إنشاء الحساب بنجاح",
-        user: { id: newUser.id, name: newUser.name, email: newUser.email }
+        user: { id: newUser.id, name: newUser.name, email: newUser.email },
+        token: Buffer.from(`${newUser.email}:${newUser.id}`).toString('base64')
       })
     };
   } catch (error) {

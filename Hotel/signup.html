@@ -26,8 +26,8 @@
     </div>
 
     <a href="reservation.html">احجز إقامة</a>
-    <a href="login.html">تسجيل دخول</a>
-    <a href="signup.html" class="active-dd">إنشاء حساب</a>
+    <a href="login.html" class="auth-btn login-btn">تسجيل دخول</a>
+    <a href="signup.html" class="auth-btn signup-btn">إنشاء حساب</a>
 
     <a href="javascript:void(0);" class="icon" onclick="toggleNav()">&#9776;</a>
   </div>
@@ -56,11 +56,28 @@
       <p id="signupMsg" class="form-message"></p>
 
       <button class="send-btn" type="submit">إنشاء حساب</button>
+
+      <div class="divider-text">أو</div>
+
+      <button class="github-btn" type="button" id="githubSignupBtn">
+        <span>🔗 التسجيل عبر GitHub</span>
+      </button>
+
+      <div class="login-links">
+        <span class="separator">هل لديك حساب؟</span>
+        <a href="login.html" class="link">تسجيل دخول</a>
+      </div>
     </form>
 
     <div class="info-box">
-      <h3>ملاحظة</h3>
-      <p>بعد إنشاء الحساب يمكنك تسجيل الدخول من صفحة تسجيل الدخول.</p>
+      <h3>معلومات مهمة</h3>
+      <p><strong>بعد إنشاء الحساب سوف تتمكن من:</strong></p>
+      <ul style="margin: 8px 0; padding-right: 20px;">
+        <li>إدارة حجوزاتك بسهولة</li>
+        <li>الحصول على تحديثات يومية عن كلبك</li>
+        <li>الوصول إلى الصور والفيديوهات</li>
+        <li>الاحتفاظ بسجل الإقامات السابقة</li>
+      </ul>
     </div>
   </div>
 
@@ -69,6 +86,7 @@
   <audio id="successSound" src="sound-effects/success.mp3" preload="auto"></audio>
   <audio id="errorSound" src="sound-effects/error.mp3" preload="auto"></audio>
 
+  <script src="js/index.js"></script>
   <script src="js/auth.js"></script>
 </body>
 </html>
