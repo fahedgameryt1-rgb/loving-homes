@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>إنشاء حساب | Loving Homes</title>
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+  <div class="topnav" id="myTopnav">
+    <a href="index.html">الرئيسية</a>
+    <a href="services.html">خدماتنا</a>
+    <a href="packages.html">الباقات</a>
+    <a href="tips.html">نصائح ومساعدة</a>
+
+    <div class="dropdown" id="companyDrop">
+      <button class="dropbtn" type="button" onclick="toggleCompanyDropdown(event)">
+        الشركة <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="about.html">حكايتنا</a>
+        <a href="contact.html">تواصل معنا</a>
+      </div>
+    </div>
+
+    <a href="reservation.html">احجز إقامة</a>
+    <a href="login.html">تسجيل دخول</a>
+    <a href="signup.html" class="active-dd">إنشاء حساب</a>
+
+    <a href="javascript:void(0);" class="icon" onclick="toggleNav()">&#9776;</a>
+  </div>
+
+  <marquee class="m1m">☆*:. أنشئ حسابك في Loving Homes بسهولة…｡.:*☆</marquee>
+
+  <div class="logo">
+    <img src="img/logo.png" alt="شعار Loving Homes">
+    <h1>Loving Homes</h1>
+    <p class="subtitle">إنشاء حساب جديد</p>
+  </div>
+
+  <div class="form-wrapper">
+    <form id="signupForm" novalidate>
+      <h2><mark>إنشاء حساب</mark></h2>
+
+      <label for="signupName">الاسم</label>
+      <input type="text" id="signupName" placeholder="مثال: Ahmad">
+
+      <label for="signupEmail">البريد الإلكتروني</label>
+      <input type="email" id="signupEmail" placeholder="example@gmail.com">
+
+      <label for="signupPassword">كلمة المرور</label>
+      <input type="password" id="signupPassword" placeholder="أدخل كلمة المرور">
+
+      <p id="signupMsg" class="form-message"></p>
+
+      <button class="send-btn" type="submit">إنشاء حساب</button>
+    </form>
+
+    <div class="info-box">
+      <h3>ملاحظة</h3>
+      <p>بعد إنشاء الحساب يمكنك تسجيل الدخول من صفحة تسجيل الدخول.</p>
+    </div>
+  </div>
+
+  <div class="footer">Loving Homes - فندق الكلاب | هونغ كونغ</div>
+
+  <audio id="successSound" src="sound-effects/success.mp3" preload="auto"></audio>
+  <audio id="errorSound" src="sound-effects/error.mp3" preload="auto"></audio>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>

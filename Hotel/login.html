@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>تسجيل الدخول | Loving Homes</title>
+
+<link rel="stylesheet" href="css/contact.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+<div class="topnav" id="myTopnav">
+
+<a href="index.html">الرئيسية</a>
+<a href="services.html">خدماتنا</a>
+<a href="packages.html">الباقات</a>
+<a href="tips.html">نصائح ومساعدة</a>
+
+<a href="signup.html">إنشاء حساب</a>
+
+<a href="javascript:void(0);" class="icon" onclick="toggleNav()">&#9776;</a>
+
+</div>
+
+<marquee class="m1m">تسجيل الدخول</marquee>
+
+<div class="logo">
+<img src="img/logo.png">
+<h1>Loving Homes</h1>
+<p class="subtitle">تسجيل الدخول</p>
+</div>
+
+<div class="form-wrapper">
+
+<form id="loginForm" novalidate>
+
+<h2><mark>تسجيل الدخول</mark></h2>
+
+<label>البريد الإلكتروني</label>
+<input type="email" id="loginEmail">
+
+<label>كلمة المرور</label>
+<input type="password" id="loginPassword">
+
+<p id="loginMsg" class="form-message"></p>
+
+<button class="send-btn" type="submit">دخول</button>
+
+</form>
+
+</div>
+
+<audio id="successSound" src="sound-effects/success.mp3" preload="auto"></audio>
+<audio id="errorSound" src="sound-effects/error.mp3" preload="auto"></audio>
+
+<script src="js/auth.js"></script>
+<script src="js/index.js"></script>
+
+</body>
+</html>
