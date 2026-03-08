@@ -17,3 +17,20 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+# Form Configuration
+[[forms]]
+  name = "user-signup"
+  honeypot = "website"
+  
+[[forms]]
+  name = "user-login"
+  honeypot = "website"
+
+[[forms]]
+  name = "contact"
+  honeypot = "website"
+
+[[forms]]
+  name = "booking"
+  honeypot = "website"

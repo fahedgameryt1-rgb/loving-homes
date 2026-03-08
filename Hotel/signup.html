@@ -86,6 +86,14 @@
   <audio id="successSound" src="sound-effects/success.mp3" preload="auto"></audio>
   <audio id="errorSound" src="sound-effects/error.mp3" preload="auto"></audio>
 
+  <!-- نموذج Netlify مخفي لتسجيل بيانات الاشتراك الجديد -->
+  <form data-netlify="true" hidden="" name="user-signup">
+    <input name="name" type="text"/>
+    <input name="email" type="email"/>
+    <input name="signupMethod" type="text"/>
+    <input name="timestamp" type="hidden"/>
+  </form>
+
   <script src="js/index.js"></script>
   <script src="js/auth.js"></script>
 </body>

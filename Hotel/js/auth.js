@@ -12,6 +12,33 @@ const isNetlify = window.location.hostname !== 'localhost';
 const successSound = document.getElementById("successSound");
 const errorSound = document.getElementById("errorSound");
 
+// Helper function to save form data to Netlify
+async function submitToNetlifyForm(formName, formData) {
+  try {
+    // Create FormData object for Netlify
+    const data = new FormData();
+    Object.keys(formData).forEach(key => {
+      data.append(key, formData[key]);
+    });
+
+    await fetch('/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: new URLSearchParams({
+        'form-name': formName,
+        ...formData
+      })
+    }).catch((error) => {
+      // Silent catch - Netlify forms submission is fire-and-forget
+      console.log('Form submitted to Netlify');
+    });
+  } catch (error) {
+    console.warn('Could not submit to Netlify:', error);
+  }
+}
+
 // Helper function to play sound
 function playSound(audio) {
   if (audio) {
@@ -97,6 +124,15 @@ document.addEventListener("DOMContentLoaded", () => {
           if (response.ok) {
             displayMessage(msgElement, "✅ تم إنشاء الحساب بنجاح! سيتم تحويلك قريباً...", false);
             playSound(successSound);
+
+            // Submit to Netlify Forms
+            submitToNetlifyForm('user-signup', {
+              name: name,
+              email: email,
+              signupMethod: 'email',
+              timestamp: new Date().toISOString()
+            });
+
             setTimeout(() => {
               window.location.href = "login.html";
             }, 2000);
@@ -117,6 +153,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
           displayMessage(msgElement, "✅ تم إنشاء الحساب بنجاح! سيتم تحويلك قريباً...", false);
           playSound(successSound);
+
+          // Submit to Netlify Forms
+          submitToNetlifyForm('user-signup', {
+            name: name,
+            email: email,
+            signupMethod: 'email',
+            timestamp: new Date().toISOString()
+          });
 
           setTimeout(() => {
             window.location.href = "login.html";
@@ -166,6 +210,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
             displayMessage(msgElement, "✅ تم تسجيل الدخول بنجاح!", false);
             playSound(successSound);
+
+            // Submit to Netlify Forms
+            submitToNetlifyForm('user-login', {
+              email: email,
+              loginMethod: 'email',
+              timestamp: new Date().toISOString()
+            });
+
             setTimeout(() => {
               window.location.href = "index.html";
             }, 1500);
@@ -181,6 +233,14 @@ document.addEventListener("DOMContentLoaded", () => {
             localStorage.setItem("currentUser", JSON.stringify(user));
             displayMessage(msgElement, "✅ تم تسجيل الدخول بنجاح!", false);
             playSound(successSound);
+
+            // Submit to Netlify Forms
+            submitToNetlifyForm('user-login', {
+              email: email,
+              loginMethod: 'email',
+              timestamp: new Date().toISOString()
+            });
+
             setTimeout(() => {
               window.location.href = "index.html";
             }, 1500);
@@ -331,6 +391,14 @@ document.addEventListener("DOMContentLoaded", () => {
         displayMessage(msgElement, "✅ تم التحقق من GitHub بنجاح! سيتم التحويل...", false);
         playSound(successSound);
 
+        // Submit to Netlify Forms
+        submitToNetlifyForm('user-signup', {
+          name: result.user.name,
+          email: result.user.email,
+          signupMethod: 'github',
+          timestamp: new Date().toISOString()
+        });
+
         setTimeout(() => {
           window.location.href = action === 'login' ? "index.html" : "login.html";
         }, 1500);
@@ -365,6 +433,14 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("currentUser", JSON.stringify(result.user));
         localStorage.setItem("authToken", result.token);
         localStorage.setItem("loginMethod", "github");
+
+        // Submit to Netlify Forms
+        submitToNetlifyForm('user-signup', {
+          name: result.user.name,
+          email: result.user.email,
+          signupMethod: 'github',
+          timestamp: new Date().toISOString()
+        });
 
         // Remove URL params and redirect
         window.history.replaceState({}, document.title, window.location.pathname);
