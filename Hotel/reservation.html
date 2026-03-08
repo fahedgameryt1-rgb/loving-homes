@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<!-- أقدّم للمقيّم هنا صفحة الحجز الخاصة بموقع Loving Homes وقد صممتها لتسمح للمستخدم بحجز إقامة لكلبه بطريقة واضحة ومنظمة -->
 <html dir="rtl" lang="ar">
 <head>
 <meta charset="utf-8"/>
@@ -7,10 +7,14 @@
 <meta content="Fahed" name="author"/>
 <meta content="Loving Homes, Book a Stay, حجز إقامة, فندق كلاب, هونغ كونغ" name="keywords"/>
 <title>احجز إقامة | Loving Homes</title>
+
+<!-- استخدمت هنا ملفات CSS خارجية ومكتبة أيقونات للحفاظ على تنظيم الصفحة وتناسقها مع بقية صفحات الموقع -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
 <link href="css/reservation.css" rel="stylesheet"/>
 </head>
 <body>
+
+<!-- في هذا الجزء حافظت على شريط التنقل الموحد مع باقي الصفحات وأضفت أزرار تغيير اللغة لتحسين سهولة الاستخدام -->
 <div class="topnav" id="myTopnav">
 <a href="index.html">الرئيسية</a>
 <a href="services.html">خدماتنا</a>
@@ -28,26 +32,39 @@
 <a class="active" href="reservation.html">احجز إقامة</a>
 <div class="lang-switcher"><button onclick="setLanguage('ar')" type="button">AR</button><button onclick="setLanguage('en')" type="button">EN</button></div><a class="icon" href="javascript:void(0);" onclick="toggleNav()">☰</a>
 </div>
+
+<!-- أضفت شريطًا متحركًا في أعلى الصفحة ليعطي المستخدم رسالة سريعة ومباشرة عن هدف هذه الصفحة -->
 <marquee class="m1m">☆*:. احجز إقامة لكلبك في Loving Homes بسهولة وخلينا نهتم فيه…｡.:*☆</marquee>
+
+<!-- هذا القسم يوضح هوية الصفحة من خلال الشعار واسم الموقع والعنوان الفرعي -->
 <div class="logo">
 <img alt="شعار Loving Homes" src="img/logo.png"/>
 <h1>Loving Homes</h1>
 <p class="subtitle">نموذج حجز إقامة لفندق الكلاب</p>
 </div>
+
+<!-- هنا أنشأت نموذج الحجز الرئيسي بحيث يجمع بيانات العميل وتفاصيل الإقامة المطلوبة بطريقة مرتبة وسهلة الاستخدام -->
 <div class="container">
+
+<!-- هذا النموذج مهيأ للاستقبال عبر Netlify مع حماية أساسية من الرسائل المزعجة -->
 <form data-netlify="true" id="bookingForm" method="POST" name="booking" netlify-honeypot="bot-field" novalidate="">
 <input name="form-name" type="hidden" value="booking"/>
+
 <p hidden="">
 <label>لا تعبئ هذا الحقل إذا كنت إنسانًا <input name="bot-field"/></label>
 </p>
+
 <h2><mark>معلومات الحجز</mark></h2>
 <label for="name">اسم صاحب الحجز</label>
 <input id="name" name="name" placeholder="مثال: Ahmad" type="text">
+
 <label for="phone">رقم الهاتف</label>
 <input id="phone" name="phone" placeholder="مثال: 12345678" type="text">
+
 <label for="email">البريد الإلكتروني</label>
 <input id="email" name="email" placeholder="example@gmail.com" type="text"/>
 <hr/>
+
 <h2><mark>تفاصيل الإقامة</mark></h2>
 <label for="package">اختر الباقة</label>
 <select id="package" name="package">
@@ -57,6 +74,7 @@
 <option value="daily">الباقة اليومية</option>
 <option value="custom">حزمة مخصصة</option>
 </select>
+
 <label for="stayDays">عدد أيام الإقامة</label>
 <select id="stayDays" name="stayDays">
 <option value="">اختر عدد الأيام</option>
@@ -66,6 +84,7 @@
 <option value="4">أربع ليال</option>
 <option value="5">خمس ليال</option>
 </select>
+
 <label for="dogSize">حجم الكلب</label>
 <select id="dogSize" name="dogSize">
 <option value="">اختر الحجم</option>
@@ -73,6 +92,7 @@
 <option value="medium">متوسط</option>
 <option value="large">كبير</option>
 </select>
+
 <label for="roomType">نوع الغرفة</label>
 <select id="roomType" name="roomType">
 <option value="">اختر نوع الغرفة</option>
@@ -80,17 +100,28 @@
 <option value="comfort">غرفة مريحة</option>
 <option value="private">غرفة خاصة (هدوء أكثر)</option>
 </select>
+
 <label for="checkin">تاريخ الوصول</label>
 <input id="checkin" name="checkin" type="date"/>
+
 <label for="notes">ملاحظات (حساسية، أدوية، سلوك...)</label>
 <textarea id="notes" name="notes" placeholder="اكتب ملاحظاتك هنا حتى 150 حرف"></textarea>
+
+<!-- أضفت هذا العنصر لإظهار رسائل التحقق أو نجاح الإرسال للمستخدم داخل الصفحة -->
 <p class="form-message" id="formMessage"></p>
+
 <button class="send-btn" type="submit">إرسال الحجز</button>
 </input></input></form>
 </div>
+
+<!-- هذا التذييل البسيط يحافظ على هوية الموقع في أسفل الصفحة -->
 <div class="footer">Loving Homes - فندق الكلاب | هونغ كونغ</div>
+
+<!-- أضفت مؤثرات صوتية لتحسين تجربة المستخدم عند نجاح الإرسال أو ظهور خطأ -->
 <audio id="successSound" preload="auto" src="sound-effects/success.mp3"></audio>
 <audio id="errorSound" preload="auto" src="sound-effects/error.mp3"></audio>
+
+<!-- أربط هنا ملفات JavaScript المسؤولة عن تغيير اللغة والمظهر والتحقق من النموذج والتفاعل داخل الصفحة -->
 <script src="js/language.js"></script><script src="js/theme.js"></script>
   <script src="js/reservation.js"></script>
 </body>

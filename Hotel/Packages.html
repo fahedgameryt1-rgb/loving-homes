@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<!-- أقدّم للمقيّم هنا صفحة الباقات والتي صممتها لعرض خيارات الإقامة المتاحة في Loving Homes بشكل واضح مع إمكانية اختيار حزمة جاهزة أو طلب حزمة مخصصة -->
 <html dir="rtl" lang="ar">
 <head>
 <meta charset="utf-8"/>
@@ -7,11 +7,14 @@
 <meta content="Fahed" name="author"/>
 <meta content="Loving Homes, فندق كلاب, باقات الإقامة, Premium, Classic, Daily" name="keywords"/>
 <title>الباقات | Loving Homes</title>
+
+<!-- استخدمت هنا ملفات CSS خارجية ومكتبة أيقونات للحفاظ على تنظيم الصفحة وتناسقها مع بقية صفحات الموقع -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
 <link href="css/packages.css" rel="stylesheet"/>
 </head>
 <body>
-<!-- القائمة (نفس الرئيسية والخدمات) -->
+
+<!-- في هذا الجزء حافظت على شريط التنقل الموحد مع باقي الصفحات وأضفت أزرار تغيير اللغة لتحسين سهولة الاستخدام -->
 <div class="topnav" id="myTopnav">
 <a href="index.html">الرئيسية</a>
 <a href="services.html">خدماتنا</a>
@@ -29,16 +32,22 @@
 <a href="reservation.html">احجز إقامة</a>
 <div class="lang-switcher"><button onclick="setLanguage('ar')" type="button">AR</button><button onclick="setLanguage('en')" type="button">EN</button></div><a class="icon" href="javascript:void(0);" onclick="toggleNav()">☰</a>
 </div>
+
+<!-- أضفت شريطًا متحركًا لإعطاء المستخدم رسالة سريعة عن هدف الصفحة وهو اختيار الباقة المناسبة -->
 <marquee class="m1m">☆*:. اختر الباقة المناسبة لكلبك في Loving Homes واستمتع براحة البال…｡.:*☆</marquee>
+
+<!-- هذا القسم يوضح هوية الصفحة من خلال الشعار واسم الموقع والعنوان الفرعي -->
 <div class="logo">
 <img alt="logo" src="img/logo.png"/>
 <h1>Loving Homes</h1>
 <p class="subtitle">باقات الإقامة لفندق الكلاب في هونغ كونغ</p>
 </div>
+
 <hr/>
 <h3 class="section-title">☆ <mark>الباقات المتاحة</mark></h3>
 <hr/>
-<!-- الباقات -->
+
+<!-- هنا عرضت الباقات الجاهزة بطريقة بطاقات واضحة حتى يتمكن المستخدم من المقارنة السريعة بين الخيارات المختلفة -->
 <div class="products-container">
 <div class="product">
 <p class="package-title">الباقة المميزة</p>
@@ -51,6 +60,7 @@
 <h5>احجز الباقة الآن</h5>
 </button>
 </div>
+
 <div class="product">
 <p class="package-title">الباقة الكلاسيكية</p>
 <img alt="الباقة الكلاسيكية" src="img/classic.jpg"/>
@@ -62,6 +72,7 @@
 <h5>احجز الباقة الآن</h5>
 </button>
 </div>
+
 <div class="product">
 <p class="package-title">الباقة اليومية</p>
 <img alt="الباقة اليومية" src="img/Day.jpg"/>
@@ -74,18 +85,23 @@
 </button>
 </div>
 </div>
+
 <hr/>
 <h3 class="section-title">☆ <mark>نموذج حزمة مخصصة</mark></h3>
 <hr/>
-<!-- نموذج الحزمة المخصصة -->
+
+<!-- أضفت هذا النموذج حتى أسمح للمستخدم بطلب حزمة مخصصة تناسب احتياجات كلبه في حال لم تناسبه الباقات الجاهزة -->
 <div class="form-container">
 <form id="bookingForm" novalidate="">
 <label for="name">أدخل اسمك</label>
 <input id="name" name="name" placeholder="مثال: Ahmad" type="text"/>
+
 <label for="phone">أدخل رقمك الخاص</label>
 <input id="phone" name="phone" placeholder="مثال: 0791234567" type="text"/>
+
 <label for="email">أدخل بريدك الإلكتروني</label>
 <input id="email" name="email" placeholder="مثال: example@gmail.com" type="text"/>
+
 <label for="stayDays">عدد أيام الإقامة</label>
 <select id="stayDays" name="stayDays">
 <option value="">اختر عدد الأيام</option>
@@ -95,6 +111,7 @@
 <option value="4">أربع ليال</option>
 <option value="5">خمس ليال</option>
 </select>
+
 <label for="dogSize">حجم الكلب</label>
 <select id="dogSize" name="dogSize">
 <option value="">اختر الحجم</option>
@@ -102,6 +119,7 @@
 <option value="medium">متوسط</option>
 <option value="large">كبير</option>
 </select>
+
 <label for="needs">خدمات إضافية</label>
 <select id="needs" name="needs">
 <option value="">اختر خدمة (اختياري)</option>
@@ -110,14 +128,20 @@
 <option value="privateLawn">عشب خاص</option>
 <option value="dailyPhotos">تحديثات وصور يومية</option>
 </select>
+
 <label for="comments">ملاحظات (حساسية، أدوية، سلوك...)</label>
 <textarea id="comments" name="comments" placeholder="اكتب ملاحظاتك هنا" style="height:200px"></textarea>
+
 <input type="submit" value="إرسال"/>
 </form>
 </div>
+
+<!-- هذا التذييل البسيط يحافظ على هوية الموقع في أسفل الصفحة -->
 <div class="footer">
     Loving Homes - فندق الكلاب | هونغ كونغ
   </div>
+
+<!-- أربط هنا ملفات JavaScript المسؤولة عن تغيير اللغة والمظهر والتفاعل داخل الصفحة -->
 <script src="js/language.js"></script><script src="js/theme.js"></script>
   <script src="js/packages.js"></script>
 </body>
